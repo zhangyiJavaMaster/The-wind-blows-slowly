@@ -1,0 +1,75 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0030)http://127.0.0.1:51004/view/31 -->
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+     
+<META charset="utf-8">     
+<TITLE>packageAndImport.md—F:\同步盘\文档\markdown\Developer Language\java\javaSE\2 
+面向对象\封装思想</TITLE>     <LINK href="packageAndImport_files/github.css" rel="stylesheet" 
+type="text/css">   
+<META name="GENERATOR" content="MSHTML 11.00.10586.306"></HEAD>   
+<BODY>
+<DIV class="container">
+<DIV id="markup"><ARTICLE class="markdown-body" id="content">
+<H1>package</H1>
+<P>当需要将一个类分类型时使用 package</P>
+<H1>import</H1>
+<P>当需要使用一个外部类时，使用import 导入使用</P>
+<H2>命令行编译执行</H2>
+<H3>基本配置</H3>
+<UL>
+  <LI>Test1.java 使用<CODE>package a;</CODE>,<CODE>import b.Test2;</CODE></LI>
+  <LI>Test2.java 使用<CODE>package b;</CODE></LI>
+  <LI>class 位置 <CODE>F:\classes</CODE></LI></UL>
+<H3>编译运行</H3>
+<UL>
+  <LI>如果使用<CODE>javac -d .</CODE>直接编译，
+  <UL>
+    <LI>先编译<CODE>Test2.java</CODE>
+    <UL> 
+      <LI>在<CODE>Test2.java</CODE>位置执行<CODE>javac -d . 
+      Test2.java</CODE>编译,此时会在当前位置生成<CODE>b\Test2.class</CODE></LI></UL></LI>
+    <LI>编译<CODE>Test1.java</CODE>
+    <UL> 
+      <LI>在<CODE>Test1.java</CODE>位置编译，需将<CODE>b</CODE>文件夹和<CODE>Test2.class</CODE>一起拷贝到当前位置，然后编译。</LI></UL></LI>
+    <LI>运行<CODE>Test1.class</CODE>
+    <UL> 
+      <LI>需将<CODE>b</CODE>文件夹和<CODE>Test2.class</CODE>一起拷贝到<CODE>a</CODE>文件夹并行位置，然后在<CODE>a,b</CODE>文件夹所在位置执行<CODE>java 
+      a.Test1</CODE>。</LI></UL></LI>
+    <LI>原因：编译时如果有<CODE>import</CODE>是在当前位置开始找引用的Class，运行时是在运行位置查找<CODE>运行Class</CODE>和<CODE>关联引用的Class</CODE>s。</LI></UL></LI>
+  <LI>带编译位置和<CODE>class</CODE>查找位置。
+  <UL>
+    <LI>先编译<CODE>Test2.java</CODE> 
+    <UL>
+      <LI>在<CODE>Test2.java</CODE>位置执行<CODE>javac -d F:\classes -classpath 
+      F:\classes 
+      Test2.java</CODE>编译，此时会在<CODE>F:\classes</CODE>下产生<CODE>b\Test2.class</CODE></LI></UL></LI>
+    <LI>编译<CODE>Test1.java</CODE>
+    <UL> 
+      <LI>在<CODE>Test1.java</CODE>位置执行<CODE>javac -d F:\classes -classpath 
+      F:\classes 
+      Test1.java</CODE>此时会在<CODE>F:\classes</CODE>下产生<CODE>a\Test1.class</CODE></LI></UL></LI>
+    <LI>运行 Test1.class
+    <UL>
+      <LI>1、任何位置指定绝对路径运行<CODE>java -classpath F:\classes a.Test1</CODE></LI>
+      <LI>2、在<CODE>a,b</CODE>位置执行<CODE>java a.Test1</CODE></LI></UL></LI>
+    <LI>原因：<CODE>-d</CODE>指定编译位置， <CODE>-classpath</CODE>指定了class 
+  查找位置。</LI></UL></LI></UL></ARTICLE></DIV></DIV>
+<SCRIPT type="text/x-omnimarkup-config">
+    window.App.Context = {
+      buffer_id: 31,
+      timestamp: '1463713948.045588',
+      revivable_key: 'Rjpc5ZCM5q2l55uYXOaWh+aho1xtYXJrZG93blxEZXZlbG9wZXIgTGFuZ3VhZ2VcamF2YVxqYXZhU0VcMiDpnaLlkJHlr7nosaFc5bCB6KOF5oCd5oOzXHBhY2thZ2VBbmRJbXBvcnQubWQ='
+    };
+    window.App.Options = {
+      ajax_polling_interval: 500,
+      mathjax_enabled: false
+    };
+  </SCRIPT>
+   
+<SCRIPT src="/public/jquery-2.1.3.min.js" type="text/javascript"></SCRIPT>
+   
+<SCRIPT src="/public/imagesloaded.pkgd.min.js" type="text/javascript"></SCRIPT>
+   
+<SCRIPT src="/public/app.js" type="text/javascript"></SCRIPT>
+ </BODY></HTML>
