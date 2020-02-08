@@ -40,6 +40,7 @@
         </dependency>
 
         <!-- lombok的依赖:自动生成getter和setter -->
+        <!--idea的 lombok 插件库地址https://plugins.jetbrains.com/plugin/6317-lombok/versions -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

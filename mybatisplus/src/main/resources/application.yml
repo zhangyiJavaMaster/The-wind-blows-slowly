@@ -1,6 +1,22 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # %2 表示+ 号 B8 表示东八区
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
     username: root
     password: 123456
+
+logging:
+  #日志级别
+  level:
+    root: WARN
+    com.zy.study.java.mybatisplus.mapper: trace
+  pattern:
+    #日志打印 %p 日志级别 %m 日志内容 %n 换行
+    console: '%p%m%n'
+
+#mybatis-plus:
+#global-config:
+  #db-config:
+      #配置MP的全局主键策略
+    #id-type: id_worker_str
