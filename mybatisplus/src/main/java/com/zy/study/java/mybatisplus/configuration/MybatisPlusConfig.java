@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MybatisPlusConfig {
 
-    //将MP分页插件添加到spring容器中
+    /*//将MP分页插件添加到spring容器中
     @Bean
     public PaginationInterceptor paginationInterceptor(){
         return new PaginationInterceptor();
-    }
+    }*/
 }
