@@ -26,9 +26,9 @@ public class MySqlInjector extends DefaultSqlInjector {
         methodList.add(new DeleteAllMethod());
         //不是逻辑删除字段和年龄的进行插入
         methodList.add(new InsertBatchSomeColumn(
-                t->!t.isLogicDelete() &&!t.getColumn().equals("age")));
+                t->!t.isLogicDelete() &&!"age".equals(t.getColumn())));
         methodList.add(new AlwaysUpdateSomeColumnById(
-                t->!t.getColumn().equals("name")));
+                t->!"name".equals(t.getColumn())));
         //new LogicDeleteByIdWithFill();
 
         return methodList;

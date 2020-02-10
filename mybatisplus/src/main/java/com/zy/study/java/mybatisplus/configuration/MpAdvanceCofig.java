@@ -39,7 +39,7 @@ public class MpAdvanceCofig {
         ArrayList<ISqlParser> sqlParsers = new ArrayList<>();
         //创建动态表名解析器
         DynamicTableNameParser dynamicTableNameParser = new DynamicTableNameParser();
-        Map<String, ITableNameHandler> tableNameHandlerMap = new HashMap<>();
+        Map<String, ITableNameHandler> tableNameHandlerMap = new HashMap<>(3);
         //map中，key为要替换的表名
         tableNameHandlerMap.put("users", new ITableNameHandler() {
             //返回值为替换后的表明
