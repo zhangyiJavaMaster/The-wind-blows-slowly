@@ -23,6 +23,7 @@
     <modules>
         <module>mybatisplus</module>
         <module>mysqlsubdb</module>
+        <module>java8_new_features</module>
     </modules>
 
 
